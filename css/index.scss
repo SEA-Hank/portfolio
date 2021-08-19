@@ -1,0 +1,78 @@
+div#app-wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  aside#menu {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 10px;
+    background-color: #040b14;
+    height: 100vh;
+    div#profile {
+      text-align: center;
+      padding: 20px 0px;
+      img#profile-img {
+        width: 120px;
+        border: 8px solid #2c2f3f;
+        border-radius: 120px;
+      }
+      P {
+        color: white;
+        font-size: 24px;
+        padding: 3px;
+        &:first-of-type {
+          margin-top: 10px;
+        }
+      }
+      div#brand-link {
+        margin-top: 10px;
+        a {
+          padding: 10px;
+          display: inline-block;
+          background-color: #212431;
+          border-radius: 30px;
+          margin: 0px 5px;
+          transition: background-color 0.8s ease;
+          &:hover {
+            background-color: #149ddd;
+          }
+          i.icon {
+            color: white;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          padding: 20px;
+          color: #6f7180;
+          a {
+            font-size: 18px;
+            text-decoration: none;
+            &:link,
+            &:visited {
+              color: #6f7180;
+            }
+            i.meunicon {
+              width: 30px;
+              margin-right: 5px;
+            }
+          }
+          &.activated {
+            color: #149ddd;
+            a {
+              &:link,
+              &:visited {
+                color: #149ddd;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  main#content {
+  }
+}

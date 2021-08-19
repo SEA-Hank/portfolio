@@ -1,0 +1,70 @@
+div#app-wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+div#app-wrapper aside#menu {
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: #040b14;
+  height: 100vh;
+}
+div#app-wrapper aside#menu div#profile {
+  text-align: center;
+  padding: 20px 0px;
+}
+div#app-wrapper aside#menu div#profile img#profile-img {
+  width: 120px;
+  border: 8px solid #2c2f3f;
+  border-radius: 120px;
+}
+div#app-wrapper aside#menu div#profile P {
+  color: white;
+  font-size: 24px;
+  padding: 3px;
+}
+div#app-wrapper aside#menu div#profile P:first-of-type {
+  margin-top: 10px;
+}
+div#app-wrapper aside#menu div#profile div#brand-link {
+  margin-top: 10px;
+}
+div#app-wrapper aside#menu div#profile div#brand-link a {
+  padding: 10px;
+  display: inline-block;
+  background-color: #212431;
+  border-radius: 30px;
+  margin: 0px 5px;
+  transition: background-color 0.8s ease;
+}
+div#app-wrapper aside#menu div#profile div#brand-link a:hover {
+  background-color: #149ddd;
+}
+div#app-wrapper aside#menu div#profile div#brand-link a i.icon {
+  color: white;
+  font-size: 20px;
+}
+div#app-wrapper aside#menu nav ul li {
+  padding: 20px;
+  color: #6f7180;
+}
+div#app-wrapper aside#menu nav ul li a {
+  font-size: 18px;
+  text-decoration: none;
+}
+div#app-wrapper aside#menu nav ul li a:link, div#app-wrapper aside#menu nav ul li a:visited {
+  color: #6f7180;
+}
+div#app-wrapper aside#menu nav ul li a i.meunicon {
+  width: 30px;
+  margin-right: 5px;
+}
+div#app-wrapper aside#menu nav ul li.activated {
+  color: #149ddd;
+}
+div#app-wrapper aside#menu nav ul li.activated a:link, div#app-wrapper aside#menu nav ul li.activated a:visited {
+  color: #149ddd;
+}
+
+/*# sourceMappingURL=index.css.map */
