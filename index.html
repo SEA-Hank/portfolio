@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/css/css-reset.css" />
     <link href="/fontawesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css" />
-
+    <script src="/js/index.js"></script>
+    <script src="/js/map.js"></script>
     <title>HANK'S On Online Portfolio</title>
   </head>
-  <body>
+  <body onload="init()">
     <div id="app-wrapper">
       <aside id="menu">
         <div id="profile">
@@ -56,7 +57,103 @@
           </ul>
         </nav>
       </aside>
-      <main id="content"></main>
+      <main id="content">
+        <section id="home">
+          <article id="typewriting"></article>
+        </section>
+        <section id="contact">
+          <div class="container">
+            <p class="seciton-title">Contact</p>
+            <p class="brief">
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
+              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+            </p>
+            <div id="contact-wrapper">
+              <div id="contact-info">
+                <div class="info-wrapper">
+                  <span class="info-logo-wrapper">
+                    <i class="far fa-envelope"></i>
+                  </span>
+                  <p class="info-title">Email:</p>
+                  <p class="info-content">
+                    <a href="mailto:horicky@gmail.com">horicky7@gmail.con</a>
+                  </p>
+                </div>
+                <div class="info-wrapper">
+                  <span class="info-logo-wrapper">
+                    <i class="fas fa-phone-alt"></i>
+                  </span>
+                  <p class="info-title">Phone:</p>
+                  <p class="info-content">
+                    <a href="tel:+12069605680">+1 (206) 960-5680</a>
+                  </p>
+                </div>
+                <div class="info-wrapper">
+                  <span class="info-logo-wrapper">
+                    <i class="fab fa-linkedin-in"></i>
+                  </span>
+                  <p class="info-title">Linkedin:</p>
+                  <p class="info-content">
+                    <a
+                      href="https://www.linkedin.com/in/yingheng-he-329792117/"
+                      target="_blank"
+                      >Linkedin Page</a
+                    >
+                  </p>
+                </div>
+                <div id="map"></div>
+              </div>
+              <div id="contact-message">
+                <div id="contact-name-email">
+                  <div class="contact-item-wrapper">
+                    <p class="contact-item-title">Your Name</p>
+                    <input
+                      type="text"
+                      class="contact-input"
+                      name="contact-name"
+                      id=""
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="contact-item-wrapper">
+                    <p class="contact-item-title">Your Email</p>
+                    <input
+                      type="text"
+                      class="contact-input"
+                      name="contact0-email"
+                      id=""
+                      placeholder="Email"
+                    />
+                  </div>
+                </div>
+                <div class="contact-item-wrapper">
+                  <p class="contact-item-title">Subject</p>
+                  <input
+                    type="text"
+                    class="contact-input"
+                    name="contact0-email"
+                    id=""
+                    placeholder="Subject"
+                  />
+                </div>
+                <div class="contact-item-wrapper">
+                  <p class="contact-item-title">Message</p>
+                  <textarea class="contact-textarea"></textarea>
+                </div>
+                <div id="contact-btn-wrapper">
+                  <button class="contact-btn">Send Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
+  <script
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1hC8e4sMbFwGLHj0jHPsSGKPbxxWjCVw&callback=initMap"
+  ></script>
 </html>

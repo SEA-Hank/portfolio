@@ -48,6 +48,7 @@ div#app-wrapper aside#menu div#profile div#brand-link a i.icon {
 div#app-wrapper aside#menu nav ul li {
   padding: 20px;
   color: #6f7180;
+  cursor: pointer;
 }
 div#app-wrapper aside#menu nav ul li a {
   font-size: 18px;
@@ -60,11 +61,216 @@ div#app-wrapper aside#menu nav ul li a i.meunicon {
   width: 30px;
   margin-right: 5px;
 }
+div#app-wrapper aside#menu nav ul li:hover a {
+  color: white;
+}
 div#app-wrapper aside#menu nav ul li.activated {
   color: #149ddd;
 }
 div#app-wrapper aside#menu nav ul li.activated a:link, div#app-wrapper aside#menu nav ul li.activated a:visited {
   color: #149ddd;
+}
+div#app-wrapper main#content {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+div#app-wrapper main#content section#home {
+  height: 100vh;
+  background-image: url(/image/IMG_0986.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: sticky;
+  top: 0px;
+  z-index: -1;
+}
+div#app-wrapper main#content section#home article#typewriting {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph {
+  padding: 5px;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.typewriter-name {
+  color: white;
+  font-weight: 900;
+  font-size: 28px;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.typewriter-occupation {
+  color: white;
+  font-weight: 900;
+  font-size: 26px;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.cursor {
+  font-size: 28px;
+  font-weight: 600;
+  color: #149ddd;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.creative,
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.efficient,
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.reliable {
+  font-weight: 900;
+  font-size: 26px;
+  display: inline-block;
+  padding: 0px 10px 0px 0px;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.creative::after,
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.efficient::after,
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.reliable::after {
+  width: 100%;
+  height: 3px;
+  display: block;
+  content: " ";
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.creative {
+  color: #f29191;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.creative::after {
+  background-color: #f29191;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.efficient {
+  color: #5aa897;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.efficient::after {
+  background-color: #5aa897;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.reliable {
+  color: #0061a8;
+}
+div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.reliable::after {
+  background-color: #0061a8;
+}
+div#app-wrapper main#content section {
+  padding: 20px 0px;
+}
+div#app-wrapper main#content section div.container {
+  width: 1350px;
+  margin: 0px auto;
+}
+div#app-wrapper main#content section div.container p.seciton-title {
+  color: #173b6c;
+  font-size: 32px;
+  font-weight: 900;
+}
+div#app-wrapper main#content section div.container p.seciton-title::after {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #149ddd;
+  content: " ";
+  margin-top: 15px;
+}
+div#app-wrapper main#content section div.container p.brief {
+  padding: 10px 0px;
+}
+div#app-wrapper main#content section#contact {
+  background: white;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info {
+  padding: 20px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  flex-basis: 400px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper {
+  padding: 20px 0px;
+  position: relative;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper span.info-logo-wrapper {
+  position: absolute;
+  display: inline-block;
+  background-color: #dff3fc;
+  padding: 10px;
+  border-radius: 30px;
+  transition: background-color 1s;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper span.info-logo-wrapper i {
+  border-radius: 30px;
+  color: #149ddd;
+  font-size: 20px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper p.info-title {
+  margin-left: 50px;
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #050d18;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper p.info-content {
+  margin-left: 50px;
+  padding: 10px 0px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper p.info-content a {
+  font-size: 14px;
+  color: #173b6c;
+  text-decoration: none;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper:hover span.info-logo-wrapper {
+  background-color: #149ddd;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div.info-wrapper:hover span.info-logo-wrapper i {
+  color: white;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-info div#map {
+  height: 300px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message {
+  padding: 20px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  flex-grow: 1;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-name-email {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div.contact-item-wrapper {
+  flex-grow: 1;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div.contact-item-wrapper p.contact-item-title {
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 0px;
+  color: #272829;
+  font-size: 16px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div.contact-item-wrapper input.contact-input {
+  outline: none;
+  height: 45px;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ced4da;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div.contact-item-wrapper textarea {
+  width: 100%;
+  height: 250px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message > div.contact-item-wrapper {
+  margin-top: 20px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-btn-wrapper {
+  text-align: center;
+  padding: 20px;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-btn-wrapper button.contact-btn {
+  border: none;
+  background: #149ddd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-btn-wrapper button.contact-btn:hover {
+  opacity: 0.8;
+}
+div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-btn-wrapper button.contact-btn:active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=index.css.map */
