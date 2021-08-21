@@ -41,6 +41,11 @@ $skillitem: (
 
 $resumebg: #00924b;
 $resumehover: #059862;
+
+$masklayerIndex: 90;
+$menuIndex: 99;
+$menutrigger: 50;
+
 div#app-wrapper {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -51,6 +56,7 @@ div#app-wrapper {
     padding: 10px;
     background-color: $menuBgColor;
     height: 100vh;
+    overflow-y: auto;
     div#profile {
       text-align: center;
       padding: 20px 0px;
@@ -208,13 +214,13 @@ div#app-wrapper {
         }
       }
     }
-
     section#contact {
       background: $sectionBg;
       div#contact-wrapper {
         display: flex;
         flex-direction: row;
         gap: 20px;
+        padding: 20px 0px;
         div#contact-info {
           padding: 20px;
           box-shadow: 0 0 24px 0 rgb(0 0 0 / 12%);
@@ -334,7 +340,6 @@ div#app-wrapper {
         div.skills-field {
           flex-grow: 1;
           flex: 45%;
-          max-width: 45%;
           padding: 20px;
           p.skills-field-title {
             display: inline-block;
@@ -385,10 +390,10 @@ div#app-wrapper {
         gap: 40px;
         div.portfolio-item {
           text-align: center;
-          width: 510px;
+          //width: 510px;
           box-shadow: #2d3e50 2px 2px 10px;
           //border: 8px solid white;
-          height: 300px;
+          //height: 300px;
           position: relative;
           overflow: hidden;
           a {
@@ -427,17 +432,22 @@ div#app-wrapper {
     section#about {
       div#about-container {
         display: flex;
+        flex-direction: row;
         padding: 20px 0px;
         gap: 20px;
         div#about-image-wrapper {
           flex-basis: 420px;
-          flex-shrink: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
           img {
             width: 100%;
-            height: 100%;
+            //height: 100%;
+            max-height: 425px;
           }
         }
         div#about-information {
+          min-width: 550px;
+          width: 65%;
           p#about-information-title {
             font-weight: 700;
             font-size: 30px;
@@ -474,7 +484,7 @@ div#app-wrapper {
           p#about-description {
             color: $msgTitle;
             text-indent: 20px;
-            width: 80%;
+            max-width: 725px;
             line-height: 30px;
           }
           p#about-resume-button {
@@ -497,3 +507,295 @@ div#app-wrapper {
     }
   }
 }
+div#menu-trigger {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 30px;
+  right: 30px;
+  background: $activated;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  z-index: $menutrigger;
+  i {
+    color: white;
+    font-size: 30px;
+  }
+}
+div#menu-masklayer {
+  display: none;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: $masklayerIndex;
+  &.show {
+    display: block;
+  }
+}
+//section title
+@media only screen and (max-width: 600px) {
+  div#app-wrapper {
+    main#content {
+      section {
+        div.container {
+          p.seciton-title {
+            text-align: center;
+            &::after {
+              margin: 15px auto 0px auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//menu
+@media only screen and (max-width: 1300px) {
+  div#menu-trigger {
+    display: flex;
+  }
+  div#app-wrapper {
+    aside#menu {
+      z-index: $menuIndex;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      width: 300px;
+      background: rgb(0 0 0 / 85%);
+      transform: translateX(-100%);
+      transition: transform 0.8s;
+      &.show {
+        transform: translateX(0%);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  div#app-wrapper {
+    main#content {
+      section#contact {
+        div#contact-wrapper {
+          div#contact-info {
+            flex-basis: auto;
+            flex-grow: 1;
+          }
+          div#contact-message {
+            flex-grow: 2;
+          }
+        }
+      }
+    }
+  }
+}
+//contact section
+@media only screen and (max-width: 700px) {
+  div#app-wrapper {
+    main#content {
+      section#contact {
+        div#contact-wrapper {
+          div#contact-message {
+            div#contact-name-email {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  div#app-wrapper {
+    main#content {
+      section#contact {
+        div#contact-wrapper {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+//skill section
+@media only screen and (max-width: 800px) {
+  div#app-wrapper {
+    main#content {
+      section#skills {
+        div#skills-container {
+          div.skills-field {
+            div.skills-field-wrapper {
+              div.skill-item {
+                i {
+                  font-size: 60px;
+                }
+                p {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  div#app-wrapper {
+    main#content {
+      section#skills {
+        div#skills-container {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+//portfolio
+@media only screen and (max-width: 1300px) {
+  div#app-wrapper {
+    main#content {
+      section#portfolio {
+        div#portfolio-container {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  div#app-wrapper {
+    main#content {
+      section#portfolio {
+        div#portfolio-container {
+          div.portfolio-item {
+            a {
+              p.portfolio-description {
+                bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  div#app-wrapper {
+    main#content {
+      section#portfolio {
+        div#portfolio-container {
+          flex-direction: column;
+          align-items: center;
+          div.portfolio-item {
+            max-width: 510px;
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+//about
+@media only screen and (max-width: 900px) {
+  div#app-wrapper {
+    main#content {
+      section#about {
+        div#about-container {
+          flex-direction: column;
+          div#about-image-wrapper {
+            flex-basis: auto;
+            text-align: center;
+            img {
+              max-width: 425px;
+            }
+          }
+          div#about-information {
+            width: 100%;
+            min-width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  div#app-wrapper {
+    main#content {
+      section#about {
+        div#about-container {
+          div#about-information {
+            div#about-fields {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  div#app-wrapper {
+    main#content {
+      section#about {
+        div#about-container {
+          div#about-information {
+            p#about-information-title {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//home
+@media only screen and (max-width: 500px) {
+  div#app-wrapper {
+    main#content {
+      section#home {
+        article#typewriting {
+          p.typewriting-paragraph {
+            span.typewriter-name {
+              font-size: 20px;
+            }
+            span.typewriter-occupation {
+              font-size: 20px;
+            }
+            span.creative,
+            span.efficient,
+            span.reliable {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 500px) {
+//   div#app-wrapper {
+//     main#content {
+//       section#hone {
+//         article#typewriting {
+//           p.typewriting-paragraph {
+//             span.typewriter-name {
+//               font-size: 20px;
+//             }
+//             span.typewriter-occupation {
+//               font-size: 20px;
+//             }
+//             span.creative,
+//             span.efficient,
+//             span.reliable {
+//               font-size: 16px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,6 +1,6 @@
 var init = () => {
+  window.websiteMenu = new menu();
   typewriting();
-  initScrollTo();
 };
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -71,11 +71,28 @@ var typewriting = async () => {
   }
 };
 
-var initScrollTo = () => {
-  let ul = document.getElementById("menu-ul");
-  for (let li of ul.children) {
-    li.addEventListener("click", function () {
-      var section = li.dataset.section;
+var menu = function () {
+  this.menu = document.getElementById("menu");
+  this.btn = document.getElementById("menu-trigger");
+  this.layer = document.getElementById("menu-masklayer");
+  this.btn.addEventListener("click", () => {
+    this.menu.classList.add("show");
+    this.layer.classList.add("show");
+  });
+  this.layer.addEventListener("click", () => {
+    this.hide();
+  });
+
+  this.hide = () => {
+    this.menu.classList.remove("show");
+    this.layer.classList.remove("show");
+  };
+
+  this.ul = document.getElementById("menu-ul");
+
+  var func = (function menuClick(menu) {
+    return function () {
+      var section = this.dataset.section;
       var targer = document.getElementById(section);
       var main = document.getElementById("content");
 
@@ -88,24 +105,15 @@ var initScrollTo = () => {
       } else {
         main.scrollTop = "home" ? 0 : targer.offsetTop;
       }
-      let ul = document.getElementById("menu-ul");
-      for (let li of ul.children) {
+      for (let li of menu.ul.children) {
         li.className = "";
       }
       this.className = "activated";
-    });
+      menu.hide();
+    };
+  })(this);
+
+  for (let li of this.ul.children) {
+    li.addEventListener("click", func);
   }
 };
-
-// var scrollToForSafari = (dom, current, targer, step, time) => {
-//   step = step || 10;
-//   time = time || 500;
-//   var eachStep = (targer - current) / 10;
-//   var i = 1;
-//   var time = setInterval(() => {
-//     dom.scrollTop += eachStep;
-//     if (i++ == step) {
-//       clearInterval(time);
-//     }
-//   }, time / step);
-// };
