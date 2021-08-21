@@ -590,10 +590,12 @@ div#menu-masklayer.show {
   div#app-wrapper main#content section#portfolio div#portfolio-container {
     flex-direction: column;
     align-items: center;
+    gap: 0px;
   }
   div#app-wrapper main#content section#portfolio div#portfolio-container div.portfolio-item {
     max-width: 510px;
     height: 300px;
+    margin-top: 20px;
   }
 }
 @media only screen and (max-width: 900px) {

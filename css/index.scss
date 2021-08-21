@@ -689,9 +689,11 @@ div#menu-masklayer {
         div#portfolio-container {
           flex-direction: column;
           align-items: center;
+          gap: 0px;
           div.portfolio-item {
             max-width: 510px;
             height: 300px;
+            margin-top: 20px;
           }
         }
       }
@@ -775,27 +777,3 @@ div#menu-masklayer {
     }
   }
 }
-
-// @media only screen and (max-width: 500px) {
-//   div#app-wrapper {
-//     main#content {
-//       section#hone {
-//         article#typewriting {
-//           p.typewriting-paragraph {
-//             span.typewriter-name {
-//               font-size: 20px;
-//             }
-//             span.typewriter-occupation {
-//               font-size: 20px;
-//             }
-//             span.creative,
-//             span.efficient,
-//             span.reliable {
-//               font-size: 16px;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
