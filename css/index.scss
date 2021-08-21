@@ -1,3 +1,46 @@
+$menuBgColor: #040b14;
+$profileImgBorder: #2c2f3f;
+$profileBrandLink: #212431;
+$activated: #149ddd;
+$menuLiColor: #6f7180;
+$sectionTitle: #173b6c;
+
+$sectionBg: #f5f8fd;
+
+$description: (
+  "creative": #f29191,
+  "efficient": #5aa897,
+  "reliable": #0061a8,
+);
+
+$contactTitle: #050d18;
+$msgTitle: #272829;
+$msgInput: #ced4da;
+$msglogobg: #dff3fc;
+
+$skills: (
+  "red": #ff4848,
+  "blue": #5089c6,
+  "grey": #595260,
+  "orange": #ffa900,
+);
+
+$skillitem: (
+  "html": #ff4848,
+  "css": #5089c6,
+  "js": #ffd523,
+  "react": #4fd4f7,
+  "vue": #26dd75,
+  "sass": #c45789,
+  "node": #4d884c,
+  "php": #6a6aa1,
+  "python": #2d6493,
+  "mongodb": #00924b,
+  "postgresql": #2b587f,
+);
+
+$resumebg: #00924b;
+$resumehover: #059862;
 div#app-wrapper {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -6,14 +49,14 @@ div#app-wrapper {
     flex-grow: 0;
     flex-shrink: 0;
     padding: 10px;
-    background-color: #040b14;
+    background-color: $menuBgColor;
     height: 100vh;
     div#profile {
       text-align: center;
       padding: 20px 0px;
       img#profile-img {
         width: 120px;
-        border: 8px solid #2c2f3f;
+        border: 8px solid $profileImgBorder;
         border-radius: 120px;
       }
       P {
@@ -29,12 +72,12 @@ div#app-wrapper {
         a {
           padding: 10px;
           display: inline-block;
-          background-color: #212431;
+          background-color: $profileBrandLink;
           border-radius: 30px;
           margin: 0px 5px;
           transition: background-color 0.8s ease;
           &:hover {
-            background-color: #149ddd;
+            background-color: $activated;
           }
           i.icon {
             color: white;
@@ -47,14 +90,14 @@ div#app-wrapper {
       ul {
         li {
           padding: 20px;
-          color: #6f7180;
+          color: $menuLiColor;
           cursor: pointer;
           a {
             font-size: 18px;
             text-decoration: none;
             &:link,
             &:visited {
-              color: #6f7180;
+              color: $menuLiColor;
             }
             i.meunicon {
               width: 30px;
@@ -67,11 +110,11 @@ div#app-wrapper {
             }
           }
           &.activated {
-            color: #149ddd;
+            color: $activated;
             a {
               &:link,
               &:visited {
-                color: #149ddd;
+                color: $activated;
               }
             }
           }
@@ -85,6 +128,32 @@ div#app-wrapper {
     overflow-x: hidden;
     overflow-y: scroll;
     flex-grow: 1;
+    section {
+      background: white;
+      padding: 20px 0px;
+      div.container {
+        width: 100%;
+        padding: 0px 20px;
+        max-width: 1350px;
+        margin: 0px auto;
+        p.seciton-title {
+          color: $sectionTitle;
+          font-size: 32px;
+          font-weight: 900;
+          &::after {
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: $activated;
+            content: " ";
+            margin-top: 15px;
+          }
+        }
+        p.brief {
+          padding: 10px 0px;
+        }
+      }
+    }
     section#home {
       height: 100vh;
       background-image: url(/image/IMG_0986.jpg);
@@ -112,7 +181,7 @@ div#app-wrapper {
           span.cursor {
             font-size: 28px;
             font-weight: 600;
-            color: #149ddd;
+            color: $activated;
           }
           span.creative,
           span.efficient,
@@ -128,52 +197,20 @@ div#app-wrapper {
               content: " ";
             }
           }
-          span.creative {
-            color: #f29191;
-            &::after {
-              background-color: #f29191;
-            }
-          }
-          span.efficient {
-            color: #5aa897;
-            &::after {
-              background-color: #5aa897;
-            }
-          }
-          span.reliable {
-            color: #0061a8;
-            &::after {
-              background-color: #0061a8;
+          @each $name, $color in $description {
+            span.#{$name} {
+              color: $color;
+              &::after {
+                background-color: $color;
+              }
             }
           }
         }
       }
     }
-    section {
-      background: white;
-      padding: 20px 0px;
-      div.container {
-        width: 1350px;
-        margin: 0px auto;
-        p.seciton-title {
-          color: #173b6c;
-          font-size: 32px;
-          font-weight: 900;
-          &::after {
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #149ddd;
-            content: " ";
-            margin-top: 15px;
-          }
-        }
-        p.brief {
-          padding: 10px 0px;
-        }
-      }
-    }
+
     section#contact {
+      background: $sectionBg;
       div#contact-wrapper {
         display: flex;
         flex-direction: row;
@@ -188,13 +225,13 @@ div#app-wrapper {
             span.info-logo-wrapper {
               position: absolute;
               display: inline-block;
-              background-color: #dff3fc;
+              background-color: $msglogobg;
               padding: 10px;
               border-radius: 30px;
               transition: background-color 1s;
               i {
                 border-radius: 30px;
-                color: #149ddd;
+                color: $activated;
                 font-size: 20px;
               }
             }
@@ -204,20 +241,20 @@ div#app-wrapper {
               font-family: "Raleway", sans-serif;
               font-size: 22px;
               font-weight: 600;
-              color: #050d18;
+              color: $contactTitle;
             }
             p.info-content {
               margin-left: 50px;
               padding: 10px 0px;
               a {
                 font-size: 14px;
-                color: #173b6c;
+                color: $sectionTitle;
                 text-decoration: none;
               }
             }
             &:hover {
               span.info-logo-wrapper {
-                background-color: #149ddd;
+                background-color: $activated;
                 i {
                   color: white;
                 }
@@ -242,15 +279,15 @@ div#app-wrapper {
             p.contact-item-title {
               font-family: "Open Sans", sans-serif;
               padding: 10px 0px;
-              color: #272829;
+              color: $msgTitle;
               font-size: 16px;
             }
             textarea,
             input.contact-input {
-              border: 1px solid #ced4da;
+              border: 1px solid $msgInput;
               outline: none;
               &:focus {
-                border: 1px solid #149ddd;
+                border: 1px solid $activated;
               }
             }
             input.contact-input {
@@ -271,7 +308,7 @@ div#app-wrapper {
             padding: 20px;
             button.contact-btn {
               border: none;
-              background: #149ddd;
+              background: $activated;
               color: white;
               padding: 10px 20px;
               border-radius: 5px;
@@ -289,7 +326,6 @@ div#app-wrapper {
       }
     }
     section#skills {
-      background: #f5f8fd;
       div#skills-container {
         display: flex;
         flex-direction: row;
@@ -307,17 +343,10 @@ div#app-wrapper {
             border-radius: 5px;
             font-weight: bold;
             margin-bottom: 10px;
-            &.red {
-              background: #ff4848;
-            }
-            &.blue {
-              background: #5089c6;
-            }
-            &.grey {
-              background: #595260;
-            }
-            &.orange {
-              background: #ffa900;
+            @each $name, $color in $skills {
+              &.#{$name} {
+                background: $color;
+              }
             }
           }
           div.skills-field-wrapper {
@@ -330,45 +359,14 @@ div#app-wrapper {
               text-align: center;
               i {
                 font-size: 100px;
-                &.html {
-                  color: #ff4848;
-                }
-                &.css {
-                  color: #5089c6;
-                }
-                &.js {
-                  color: #ffd523;
-                }
-                &.js {
-                  color: #ffd523;
-                }
-                &.react {
-                  color: #4fd4f7;
-                }
-                &.vue {
-                  color: #26dd75;
-                }
-                &.sass {
-                  color: #c45789;
-                }
-                &.node {
-                  color: #4d884c;
-                }
-                &.php {
-                  color: #6a6aa1;
-                }
-                &.python {
-                  color: #2d6493;
-                }
-                &.mongodb {
-                  color: #00924b;
-                }
-                &.postgresql {
-                  color: #2b587f;
+                @each $name, $color in $skillitem {
+                  &.#{$name} {
+                    color: $color;
+                  }
                 }
               }
               p {
-                color: #050d18;
+                color: $contactTitle;
                 font-size: 20px;
                 font-weight: 900;
                 padding: 5px;
@@ -379,6 +377,7 @@ div#app-wrapper {
       }
     }
     section#portfolio {
+      background: $sectionBg;
       div#portfolio-container {
         display: flex;
         flex-direction: row;
@@ -401,7 +400,7 @@ div#app-wrapper {
               width: 100%;
             }
             p.portfolio-description {
-              background: #149ddd;
+              background: $activated;
               color: white;
               position: absolute;
               width: 100%;
@@ -442,7 +441,7 @@ div#app-wrapper {
           p#about-information-title {
             font-weight: 700;
             font-size: 30px;
-            color: #173b6c;
+            color: $sectionTitle;
           }
           div#about-fields {
             flex-grow: 1;
@@ -455,8 +454,8 @@ div#app-wrapper {
               padding: 5px 0px;
               flex: 45%;
               i {
-                border-top: 3px solid #149ddd;
-                border-right: 3px solid #149ddd;
+                border-top: 3px solid $activated;
+                border-right: 3px solid $activated;
                 display: inline-block;
                 height: 10px;
                 width: 10px;
@@ -468,12 +467,12 @@ div#app-wrapper {
                 font-size: 16px;
               }
               span.field-content {
-                color: #272829;
+                color: $msgTitle;
               }
             }
           }
           p#about-description {
-            color: #272829;
+            color: $msgTitle;
             text-indent: 20px;
             width: 80%;
             line-height: 30px;
@@ -484,12 +483,12 @@ div#app-wrapper {
               display: inline-block;
               text-decoration: none;
               color: white;
-              background: #00924b;
+              background: $resumebg;
               padding: 10px 15px;
               border-radius: 5px;
               font-size: 20px;
               &:hover {
-                background: #059862;
+                background: $resumehover;
               }
             }
           }

@@ -77,6 +77,32 @@ div#app-wrapper main#content {
   overflow-y: scroll;
   flex-grow: 1;
 }
+div#app-wrapper main#content section {
+  background: white;
+  padding: 20px 0px;
+}
+div#app-wrapper main#content section div.container {
+  width: 100%;
+  padding: 0px 20px;
+  max-width: 1350px;
+  margin: 0px auto;
+}
+div#app-wrapper main#content section div.container p.seciton-title {
+  color: #173b6c;
+  font-size: 32px;
+  font-weight: 900;
+}
+div#app-wrapper main#content section div.container p.seciton-title::after {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #149ddd;
+  content: " ";
+  margin-top: 15px;
+}
+div#app-wrapper main#content section div.container p.brief {
+  padding: 10px 0px;
+}
 div#app-wrapper main#content section#home {
   height: 100vh;
   background-image: url(/image/IMG_0986.jpg);
@@ -143,29 +169,8 @@ div#app-wrapper main#content section#home article#typewriting p.typewriting-para
 div#app-wrapper main#content section#home article#typewriting p.typewriting-paragraph span.reliable::after {
   background-color: #0061a8;
 }
-div#app-wrapper main#content section {
-  background: white;
-  padding: 20px 0px;
-}
-div#app-wrapper main#content section div.container {
-  width: 1350px;
-  margin: 0px auto;
-}
-div#app-wrapper main#content section div.container p.seciton-title {
-  color: #173b6c;
-  font-size: 32px;
-  font-weight: 900;
-}
-div#app-wrapper main#content section div.container p.seciton-title::after {
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: #149ddd;
-  content: " ";
-  margin-top: 15px;
-}
-div#app-wrapper main#content section div.container p.brief {
-  padding: 10px 0px;
+div#app-wrapper main#content section#contact {
+  background: #f5f8fd;
 }
 div#app-wrapper main#content section#contact div#contact-wrapper {
   display: flex;
@@ -278,9 +283,6 @@ div#app-wrapper main#content section#contact div#contact-wrapper div#contact-mes
 div#app-wrapper main#content section#contact div#contact-wrapper div#contact-message div#contact-btn-wrapper button.contact-btn:active {
   opacity: 1;
 }
-div#app-wrapper main#content section#skills {
-  background: #f5f8fd;
-}
 div#app-wrapper main#content section#skills div#skills-container {
   display: flex;
   flex-direction: row;
@@ -335,9 +337,6 @@ div#app-wrapper main#content section#skills div#skills-container div.skills-fiel
 div#app-wrapper main#content section#skills div#skills-container div.skills-field div.skills-field-wrapper div.skill-item i.js {
   color: #ffd523;
 }
-div#app-wrapper main#content section#skills div#skills-container div.skills-field div.skills-field-wrapper div.skill-item i.js {
-  color: #ffd523;
-}
 div#app-wrapper main#content section#skills div#skills-container div.skills-field div.skills-field-wrapper div.skill-item i.react {
   color: #4fd4f7;
 }
@@ -367,6 +366,9 @@ div#app-wrapper main#content section#skills div#skills-container div.skills-fiel
   font-size: 20px;
   font-weight: 900;
   padding: 5px;
+}
+div#app-wrapper main#content section#portfolio {
+  background: #f5f8fd;
 }
 div#app-wrapper main#content section#portfolio div#portfolio-container {
   display: flex;
