@@ -33,26 +33,30 @@
           </div>
         </div>
         <nav>
-          <ul>
-            <li class="activated">
-              <a href=""> <i class="meunicon fas fa-home"></i>Home</a>
+          <ul id="menu-ul">
+            <li data-section="home" class="activated">
+              <a href="#home"> <i class="meunicon fas fa-home"></i>Home</a>
             </li>
-            <li>
-              <a href=""> <i class="meunicon fas fa-address-card"></i>About</a>
+            <li data-section="about">
+              <a href="#about">
+                <i class="meunicon fas fa-address-card"></i>About</a
+              >
             </li>
-            <li>
+            <!-- <li>
               <a href=""> <i class="meunicon fas fa-file"></i>Resume</a>
-            </li>
-            <li>
-              <a href="">
+            </li> -->
+            <li data-section="portfolio">
+              <a href="#portfolio">
                 <i class="meunicon fas fa-photo-video"></i>Portfolio</a
               >
             </li>
-            <li>
-              <a href=""><i class="meunicon fas fa-tools"></i>Skill</a>
+            <li data-section="skills">
+              <a href="#skills"><i class="meunicon fas fa-tools"></i>Skill</a>
             </li>
-            <li>
-              <a href=""> <i class="meunicon fas fa-paper-plane"></i>Contact</a>
+            <li data-section="contact">
+              <a href="#contact">
+                <i class="meunicon fas fa-paper-plane"></i>Contact</a
+              >
             </li>
           </ul>
         </nav>
@@ -61,15 +65,175 @@
         <section id="home">
           <article id="typewriting"></article>
         </section>
+
+        <section id="about">
+          <div class="container">
+            <p class="seciton-title">About</p>
+            <div id="about-container">
+              <div id="about-image-wrapper">
+                <img src="/image/about.jpg" alt="" />
+              </div>
+              <div id="about-information">
+                <p id="about-information-title">Professional Web Developer</p>
+                <div id="about-fields">
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">Website:</span>
+                    <span class="field-content">www.mywebsite.com</span>
+                  </div>
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">Degree:</span>
+                    <span class="field-content">AA Degree</span>
+                  </div>
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">Phone:</span>
+                    <span class="field-content">+1 (206) 960-5680</span>
+                  </div>
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">Email:</span>
+                    <span class="field-content">horicky7@gmail.com</span>
+                  </div>
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">City:</span>
+                    <span class="field-content">Seattle, USA</span>
+                  </div>
+                  <div class="about-field-item">
+                    <i class="field-arrow"></i>
+                    <span class="field-name">Hobby:</span>
+                    <span class="field-content">Coding, Fishing, Hiking</span>
+                  </div>
+                </div>
+                <p id="about-description">
+                  Hi, everyone. I am an easy-going and reliable person. I love
+                  to work in team, I glad to receive any comments from others
+                  and be willing to cooperate in the group. I am not only good
+                  at teamwork, I have the ability to solve problems on my own.I
+                  will take every task seriously and always try my best to
+                  complete projects perfectly. I will constantly improve myself
+                  and love learning new techniques. Hope to work with you soon.
+                </p>
+                <p id="about-resume-button">
+                  <a
+                    href="https://docs.google.com/document/d/1xSWHZIsFiFd9ujg1SKUrikEHbrWHxWSrUOhGkKWTdTM/edit"
+                    target="_blank"
+                    >View My Resume</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="portfolio">
+          <div class="container">
+            <p class="seciton-title">Portfolio</p>
+            <div id="portfolio-container">
+              <div class="portfolio-item">
+                <a href="https://it162.seahank.com/fp/index.php">
+                  <img
+                    src="/image/portfolio-1.jpg"
+                    class="portfolio-1"
+                    alt="construction company website"
+                  />
+                  <p class="portfolio-description">
+                    construction company website
+                  </p>
+                </a>
+              </div>
+              <div class="portfolio-item">
+                <a
+                  href="https://sea-hank.github.io/IT121-FINAL-PROJECT/index.html"
+                >
+                  <img
+                    src="/image/portfolio-2.jpg"
+                    alt="shopping company website"
+                  />
+                  <p class="portfolio-description">shopping website</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills">
+          <div class="container">
+            <p class="seciton-title">Skills</p>
+            <div id="skills-container">
+              <div class="skills-field">
+                <p class="skills-field-title red">Front-End</p>
+                <div class="skills-field-wrapper">
+                  <div class="skill-item">
+                    <i class="fab fa-html5 html"></i>
+                    <p>HTML</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-css3-alt css"></i>
+                    <p>CSS</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-js js"></i>
+                    <p>JS</p>
+                  </div>
+                </div>
+              </div>
+              <div class="skills-field">
+                <p class="skills-field-title blue">Framework</p>
+                <div class="skills-field-wrapper">
+                  <div class="skill-item">
+                    <i class="fab fa-react react"></i>
+                    <p>React</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-vuejs vue"></i>
+                    <p>Vue</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-sass sass"></i>
+                    <p>Sass</p>
+                  </div>
+                </div>
+              </div>
+              <div class="skills-field">
+                <p class="skills-field-title grey">Back-End</p>
+                <div class="skills-field-wrapper">
+                  <div class="skill-item">
+                    <i class="fab fa-node-js node"></i>
+                    <p>Node</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-php php"></i>
+                    <p>PHP</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-python python"></i>
+                    <p>Python</p>
+                  </div>
+                </div>
+              </div>
+              <div class="skills-field">
+                <p class="skills-field-title orange">Database</p>
+                <div class="skills-field-wrapper">
+                  <div class="skill-item">
+                    <i class="fas fa-database mongodb"></i>
+                    <p>Mongodb</p>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-server postgresql"></i>
+                    <p>Postgresql</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="contact">
           <div class="container">
             <p class="seciton-title">Contact</p>
-            <p class="brief">
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-              Quia fugiat sit in iste officiis commodi quidem hic quas.
-            </p>
             <div id="contact-wrapper">
               <div id="contact-info">
                 <div class="info-wrapper">

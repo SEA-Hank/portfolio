@@ -1,5 +1,6 @@
 var init = () => {
   typewriting();
+  initScrollTo();
 };
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -53,9 +54,6 @@ var typewriting = async () => {
         words.innerText += word;
         await sleep(100);
       }
-      //   if (index != info.messages.length - 1) {
-      //     await sleep(1000);
-      //   }
     }
     let timer = setInterval(function () {
       if (cursor.innerText == "|") {
@@ -72,3 +70,42 @@ var typewriting = async () => {
     await sleep(1400);
   }
 };
+
+var initScrollTo = () => {
+  let ul = document.getElementById("menu-ul");
+  for (let li of ul.children) {
+    li.addEventListener("click", function () {
+      var section = li.dataset.section;
+      var targer = document.getElementById(section);
+      var main = document.getElementById("content");
+
+      if (main.scrollTo) {
+        main.scrollTo({
+          top: section == "home" ? 0 : targer.offsetTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        main.scrollTop = "home" ? 0 : targer.offsetTop;
+      }
+      let ul = document.getElementById("menu-ul");
+      for (let li of ul.children) {
+        li.className = "";
+      }
+      this.className = "activated";
+    });
+  }
+};
+
+// var scrollToForSafari = (dom, current, targer, step, time) => {
+//   step = step || 10;
+//   time = time || 500;
+//   var eachStep = (targer - current) / 10;
+//   var i = 1;
+//   var time = setInterval(() => {
+//     dom.scrollTop += eachStep;
+//     if (i++ == step) {
+//       clearInterval(time);
+//     }
+//   }, time / step);
+// };
