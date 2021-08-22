@@ -74,19 +74,45 @@ var typewriting = async () => {
 var menu = function () {
   this.menu = document.getElementById("menu");
   this.btn = document.getElementById("menu-trigger");
+  this.logo = document.getElementById("menu-logo");
+  this.logoClose = document.getElementById("menu-logo-close");
   this.layer = document.getElementById("menu-masklayer");
-  this.btn.addEventListener("click", () => {
+
+  this.show = () => {
+    this.menuBtnAnimate(this.logo, this.logoClose, [0, -45, -90]);
     this.menu.classList.add("show");
     this.layer.classList.add("show");
-  });
-  this.layer.addEventListener("click", () => {
-    this.hide();
-  });
+  };
 
   this.hide = () => {
+    this.menuBtnAnimate(this.logoClose, this.logo, [-90, -45, 0]);
     this.menu.classList.remove("show");
     this.layer.classList.remove("show");
   };
+
+  this.menuBtnAnimate = (current, next, degree) => {
+    var options = { fill: "forwards", duration: 150 };
+    current
+      .animate(
+        [
+          { transform: `rotate(${degree[0]}deg)`, opacity: 1 },
+          { transform: `rotate(${degree[1]}deg)`, opacity: 0 },
+        ],
+        options
+      )
+      .finished.then(() => {
+        next.animate(
+          [
+            { transform: `rotate(${degree[1]}deg)`, opacity: 0 },
+            { transform: `rotate(${degree[2]}deg)`, opacity: 1 },
+          ],
+          options
+        );
+      });
+  };
+
+  this.btn.addEventListener("click", this.show);
+  this.layer.addEventListener("click", this.hide);
 
   this.ul = document.getElementById("menu-ul");
 

@@ -503,6 +503,13 @@ div#menu-trigger i {
   color: white;
   font-size: 30px;
 }
+div#menu-trigger i#menu-logo {
+  position: absolute;
+}
+div#menu-trigger i.fa-times {
+  opacity: 0;
+  font-size: 34px;
+}
 
 div#menu-masklayer {
   display: none;

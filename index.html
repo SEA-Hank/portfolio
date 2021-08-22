@@ -12,7 +12,10 @@
     <title>HANK'S On Online Portfolio</title>
   </head>
   <body onload="init()">
-    <div id="menu-trigger"><i class="fas fa-bars"></i></div>
+    <div id="menu-trigger">
+      <i id="menu-logo" class="fas fa-bars"></i>
+      <i id="menu-logo-close" class="fas fa-times"></i>
+    </div>
     <div id="menu-masklayer"></div>
     <div id="app-wrapper">
       <aside id="menu">
@@ -278,8 +281,6 @@
                     <input
                       type="text"
                       class="contact-input"
-                      name="contact-name"
-                      id=""
                       placeholder="Name"
                     />
                   </div>
@@ -288,8 +289,6 @@
                     <input
                       type="text"
                       class="contact-input"
-                      name="contact0-email"
-                      id=""
                       placeholder="Email"
                     />
                   </div>
@@ -299,8 +298,6 @@
                   <input
                     type="text"
                     class="contact-input"
-                    name="contact0-email"
-                    id=""
                     placeholder="Subject"
                   />
                 </div>
