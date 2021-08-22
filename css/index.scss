@@ -158,6 +158,29 @@ div#app-wrapper {
         p.brief {
           padding: 10px 0px;
         }
+        .portfolio-animate {
+          transition: transform 2s ease, opacity 1s ease;
+          &.portfolio-left {
+            transform: translate(-200px, 0px);
+            opacity: 0;
+          }
+          &.portfolio-right {
+            transform: translate(200px, 0px);
+            opacity: 0;
+          }
+          &.portfolio-bottom {
+            transform: translate(0px, 200px);
+            opacity: 0;
+          }
+          &.portfolio-top {
+            transform: translate(0px, -200px);
+            opacity: 0;
+          }
+          &.portfolio-present {
+            transform: translate(0px, 0px);
+            opacity: 1;
+          }
+        }
       }
     }
     section#home {

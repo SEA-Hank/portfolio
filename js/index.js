@@ -1,6 +1,7 @@
 var init = () => {
+  setTimeout(typewriting, 0);
   window.websiteMenu = new menu();
-  typewriting();
+  window.websiteScrollAnimation = new scrollAnimation();
 };
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -142,4 +143,29 @@ var menu = function () {
   for (let li of this.ul.children) {
     li.addEventListener("click", func);
   }
+};
+
+var scrollAnimation = function () {
+  var isInViewPortOfOne = (el) => {
+    let viewPortHeight =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    let offsetTop = el.offsetTop;
+    let scrollTop = this.contentWrapper.scrollTop;
+    let top = offsetTop - scrollTop;
+    return top <= viewPortHeight - 150;
+  };
+  this.contentWrapper = document.getElementById("content");
+  this.AnimateDoms = document.getElementsByClassName("portfolio-animate");
+  this.contentWrapper.addEventListener("scroll", () => {
+    for (dom of this.AnimateDoms) {
+      if (
+        !dom.classList.contains("portfolio-present") &&
+        isInViewPortOfOne(dom)
+      ) {
+        dom.classList.add("portfolio-present");
+      }
+    }
+  });
 };
