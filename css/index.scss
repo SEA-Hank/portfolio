@@ -45,7 +45,9 @@ $resumehover: #059862;
 $masklayerIndex: 90;
 $menuIndex: 99;
 $menutrigger: 50;
-
+html {
+  scroll-behavior: smooth;
+}
 div#app-wrapper {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -437,7 +439,7 @@ div#app-wrapper {
               height: 50px;
               line-height: 50px;
               font-weight: 900;
-              opacity: 0.8;
+              opacity: 0;
               transition: bottom 0.3s;
             }
             &:hover {
@@ -446,6 +448,7 @@ div#app-wrapper {
               }
               p.portfolio-description {
                 bottom: 0px;
+                opacity: 0.8;
               }
             }
           }

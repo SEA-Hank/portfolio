@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 div#app-wrapper {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -425,7 +429,7 @@ div#app-wrapper main#content section#portfolio div#portfolio-container div.portf
   height: 50px;
   line-height: 50px;
   font-weight: 900;
-  opacity: 0.8;
+  opacity: 0;
   transition: bottom 0.3s;
 }
 div#app-wrapper main#content section#portfolio div#portfolio-container div.portfolio-item a:hover img {
@@ -433,6 +437,7 @@ div#app-wrapper main#content section#portfolio div#portfolio-container div.portf
 }
 div#app-wrapper main#content section#portfolio div#portfolio-container div.portfolio-item a:hover p.portfolio-description {
   bottom: 0px;
+  opacity: 0.8;
 }
 div#app-wrapper main#content section#about div#about-container {
   display: flex;

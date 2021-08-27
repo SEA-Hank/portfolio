@@ -78,6 +78,7 @@ var menu = function () {
   this.logo = document.getElementById("menu-logo");
   this.logoClose = document.getElementById("menu-logo-close");
   this.layer = document.getElementById("menu-masklayer");
+  this.main = document.getElementById("content");
 
   this.show = () => {
     this.menuBtnAnimate(this.logo, this.logoClose, [0, -45, -90]);
@@ -121,17 +122,11 @@ var menu = function () {
     return function () {
       var section = this.dataset.section;
       var targer = document.getElementById(section);
-      var main = document.getElementById("content");
-
-      if (main.scrollTo) {
-        main.scrollTo({
-          top: section == "home" ? 0 : targer.offsetTop,
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
-        main.scrollTop = "home" ? 0 : targer.offsetTop;
-      }
+      console.log(menu.main.offsetTop);
+      menu.scroll(
+        menu.main.scrollTop,
+        section == "home" ? 0 : targer.offsetTop
+      );
       for (let li of menu.ul.children) {
         li.className = "";
       }
@@ -139,6 +134,27 @@ var menu = function () {
       menu.hide();
     };
   })(this);
+
+  this.scroll = (currentY, targetY) => {
+    let needScrollTop = targetY - currentY;
+    let _currentY = currentY;
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10);
+      _currentY += dist;
+      this.main.scrollTo({
+        top: _currentY,
+        left: 0,
+      });
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        this.scroll(_currentY, targetY);
+      } else {
+        this.main.scrollTo({
+          top: targetY,
+          left: 0,
+        });
+      }
+    }, 8);
+  };
 
   for (let li of this.ul.children) {
     li.addEventListener("click", func);
