@@ -410,6 +410,7 @@ div#app-wrapper {
       background: $sectionBg;
       div#portfolio-container {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         padding: 20px 0px;
         gap: 40px;
